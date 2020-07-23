@@ -580,6 +580,7 @@ impl CrateData {
             Target::NoModules => self.to_nomodules(scope, disable_dts, out_dir),
             Target::Bundler => self.to_esmodules(scope, disable_dts, out_dir),
             Target::Web => self.to_web(scope, disable_dts, out_dir),
+            Target::Deno => self.to_commonjs(scope, disable_dts, out_dir),
         };
 
         let npm_json = serde_json::to_string_pretty(&npm_data)?;
